@@ -1,0 +1,12 @@
+<h1>計算結果</h1>
+
+<p>距離: <%= @ballistic.distance %> m</p>
+<p>射撃角度: <%= @ballistic.angle %> °</p>
+<p>風速: <%= @ballistic.wind_speed %> m/s</p>
+<p>風向: <%= @ballistic.wind_direction %> °</p>
+<p>弾道落下量: <%= @ballistic.calculated_drop %> m</p>
+<p>分散: <%= @ballistic.calculated_dispersion %> m</p>
+
+<div>
+  <%= link_to "次弾計算", new_ballistic_path, class: 'button' %>
+</div>

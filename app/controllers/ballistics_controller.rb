@@ -1,4 +1,6 @@
 class BallisticsController < ApplicationController
+  before_action :authenticate_user! # ログインが必要
+
   def new
     @ballistic = Ballistic.new
   end
@@ -6,7 +8,7 @@ class BallisticsController < ApplicationController
   def create
     @ballistic = Ballistic.new(ballistic_params)
     if @ballistic.save
-      redirect_to @ballistic, notice: '弾道計算が完了しました'
+      redirect_to @ballistic # 保存後に結果画面へリダイレクト
     else
       render :new
     end
@@ -14,12 +16,11 @@ class BallisticsController < ApplicationController
 
   def show
     @ballistic = Ballistic.find(params[:id])
-    @trajectory = @ballistic.calculate_trajectory
   end
 
   private
 
   def ballistic_params
-    params.require(:ballistic).permit(:distance, :angle, :wind_speed, :wind_direction)
+    params.require(:ballistic).permit(:distance, :angle, :wind_speed, :wind_direction, :calculated_drop, :calculated_dispersion)
   end
 end

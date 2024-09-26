@@ -1,2 +1,28 @@
-<h1>Ballistics#new</h1>
-<p>Find me in app/views/ballistics/new.html.erb</p>
+<%= form_with model: @ballistic, local: true do |form| %>
+  <div>
+    <%= form.label :distance, '距離 (m)' %>
+    <%= form.number_field :distance, id: 'distance', data: { controller: "calculation", action: "input->calculation#update" } %>
+  </div>
+
+  <div>
+    <%= form.label :angle, '射撃角度 (°)' %>
+    <%= form.number_field :angle, id: 'angle', data: { controller: "calculation", action: "input->calculation#update" } %>
+  </div>
+
+  <div>
+    <%= form.label :wind_speed, '風速 (mph)' %>
+    <%= form.number_field :wind_speed, id: 'wind_speed', data: { controller: "calculation", action: "input->calculation#update" } %>
+  </div>
+
+  <div>
+    <%= form.label :wind_direction, '風向 (°)' %>
+    <%= form.number_field :wind_direction, id: 'wind_direction', data: { controller: "calculation", action: "input->calculation#update" } %>
+  </div>
+
+  <!-- 結果表示部分 -->
+  <div id="calculation_results">
+    <h3>計算結果</h3>
+    <p>落下距離: <span id="result_drop">--</span></p>
+    <p>水平偏差: <span id="result_dispersion">--</span></p>
+  </div>
+<% end %>

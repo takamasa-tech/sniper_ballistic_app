@@ -6,6 +6,13 @@ body {
     margin-top: 10%;
   }
   
+  h1 {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 3em;
+    text-align: center;
+    color: white;
+  }
+  
   .container {
     max-width: 800px;
     margin: 0 auto;

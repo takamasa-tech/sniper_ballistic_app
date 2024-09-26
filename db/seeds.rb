@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Bullet.create([
+  { name: "7.62x51mm NATO", weight: 9.75, velocity: 820, ballistic_coefficient: 0.450 }
+])
