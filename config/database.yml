@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: g1012075
+  host: localhost
+
+development:
+  <<: *default
+  database: sniper_ballistic_development
+
+test:
+  <<: *default
+  database: sniper_ballistic_test
+
+production:
+  <<: *default
+  database: sniper_ballistic_production
+  username: sniper_ballistic
+  password: <%= ENV['SNIPER_BALLISTIC_DATABASE_PASSWORD'] %>

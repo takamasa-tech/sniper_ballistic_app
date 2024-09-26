@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  distance: 1.5
+  angle: 1.5
+  wind_speed: 1.5
+  wind_direction: 1.5
+  calculated_drop: 1.5
+  calculated_dispersion: 1.5
+
+two:
+  distance: 1.5
+  angle: 1.5
+  wind_speed: 1.5
+  wind_direction: 1.5
+  calculated_drop: 1.5
+  calculated_dispersion: 1.5

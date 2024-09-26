@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>一射絶命</title>
+  <%= stylesheet_link_tag 'home', media: 'all' %>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">一射絶命</h1>
+
+    <div class="auth-links">
+      <%= link_to '新規登録', new_user_registration_path, class: 'auth-button' %>
+      <%= link_to 'ログイン', new_user_session_path, class: 'auth-button' %>
+    </div>
+  </div>
+</body>
+</html>
+
